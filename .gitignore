@@ -1,0 +1,8 @@
+.nrepl-port
+.lein-repl-history
+.cpcache
+.calva
+.clj-kondo
+.idea
+.lsp
+target
