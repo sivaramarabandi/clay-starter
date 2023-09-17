@@ -1,0 +1,18 @@
+;; deps.edn
+{:deps {org.scicloj/clay {:mvn/version "2-alpha32"}}
+ :paths ["src" "notebooks"]
+
+ ;; run alliases with 'clj -A<alias name>'
+ :aliases {:outdated {:extra-deps {olical/depot {:mvn/version "2.3.0"}}
+                      :main-opts  ["-m" "depot.outdated.main" "-a" "outdated"]}
+           :test {:extra-paths ["test"]
+                  :extra-deps  {lambdaisland/kaocha {:mvn/version "0.0-529"}}
+                  :main-opts   ["-m" "kaocha.runner"]}
+           :repl/conjure
+                 {:extra-deps {nrepl/nrepl       {:mvn/version "1.1.0-alpha1"}
+                               cider/cider-nrepl {:mvn/version "0.37.1"}}
+                  :main-opts  ["-m" "nrepl.cmdline"
+                               "--middleware" "[cider.nrepl/cider-middleware]"
+                               "--interactive"]}
+           }
+ }
